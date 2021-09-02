@@ -39,15 +39,16 @@ def main():
 
             conversion = result[tsym]
             value = amount * conversion
-            print(f'{value:f} {tsym}')
+            value = int(value) if value.is_integer() else f'{value:f}'.rstrip('0')
+            print(f'{value} {tsym}')
         else:
             print(res.status_code, res.reason)
     except Exception as e:
-        print('Exception occured', file=sys.stderr)
+        print('Exception occurred', file=sys.stderr)
         print(e, file=sys.stderr)
         print()
         print('Response:')
-        print(res)
+        print(res.status_code, res.reason)
 
 
 if __name__ == '__main__':
