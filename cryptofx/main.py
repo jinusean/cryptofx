@@ -13,7 +13,7 @@ def main():
 
     for arg in args:
         if arg in ['-h', '--help']:
-            return print('crypto-fx [amount] [from=btc] [to=usd]')
+            return print('cryptofx [amount] [from=btc] [to=usd]')
         try:
             amount = float(arg)
         except:
