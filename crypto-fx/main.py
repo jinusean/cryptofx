@@ -39,7 +39,7 @@ def main():
 
             conversion = result[tsym]
             value = amount * conversion
-            print(f'{value} {tsym}')
+            print(f'{value:f} {tsym}')
         else:
             print(res.status_code, res.reason)
     except Exception as e:
